@@ -3,8 +3,14 @@
 <head>
   <title>Facebook</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
-<!--   <script type="text/javascript" src="scripts.js"></script> -->
+<!--   <script type="text/javascript" src="scripts.js"></script>
   <script type="text/javascript" src="cursor.js"></script>
+  <script type="text/javascript" src="togglereply.js"></script> -->
+  <script type="text/javascript" src="comment.js"></script>
+<!--   <script type="text/javascript" src="modalname.js"></script>
+  <script type="text/javascript" src="modal.js"></script>
+  <script type="text/javascript" src="modalshare.js"></script>
+  <script type="text/javascript"></script> -->
 </head>
 <body>
 
@@ -37,7 +43,7 @@
     <div class="post__details">
       <div class="post__info">
         <span class=like_count >28 likes</span>
-        <span>3 comments</span>
+        <span id="comment__number">3 comments</span>
       </div>
 
       <div class="post__comments">
@@ -51,7 +57,7 @@
             <div class="comment__info">
               <a href="#" class="action action--like">Like</a>
               <a href="#" class="action action--like">Unlike</a>
-              <a href="#">4 replies</a>
+              <a class="reply_count" href="#">4 replies</a>
               <span class=like_count >2 likes</span>
               Yesterday at 10:00am
             </div>
@@ -67,7 +73,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">Reply</a>
+                    <a class="reply_count" href="#">Reply</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -84,7 +90,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">Reply</a>
+                    <a class="reply_count" href="#">Reply</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -101,7 +107,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">2 replies</a>
+                    <a class="reply_count" href="#">2 replies</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -117,7 +123,7 @@
                         <div class="comment__info">
                           <a href="#" class="action action--like">Like</a>
                           <a href="#" class="action action--like">Unlike</a>
-                          <a href="#">Reply</a>
+                          <a class="reply_count" href="#">Reply</a>
                           <span class=like_count >2 likes</span>
                           Yesterday at 10:00am
                         </div>
@@ -134,7 +140,7 @@
                         <div class="comment__info">
                           <a href="#" class="action action--like">Like</a>
                           <a href="#" class="action action--like">Unlike</a>
-                          <a href="#">Reply</a>
+                          <a class="reply_count" href="#">Reply</a>
                           <span class=like_count >2 likes</span>
                           Yesterday at 10:00am
                         </div>
@@ -146,8 +152,8 @@
 
                       <div class="media__info">
                         <form action="#" method="post">
-                          <textarea name="comment" id="textbox"></textarea>
-                          <input type="submit">
+                          <textarea class="commentbox" name="comment"></textarea>
+                          <input class="submitcomment" type="submit">
                         </form>
                       </div>
                     </div>
@@ -165,7 +171,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">Reply</a>
+                    <a class="reply_count" href="#">Reply</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -177,8 +183,8 @@
 
                 <div class="media__info">
                   <form action="#" method="post">
-                    <textarea name="comment"></textarea>
-                    <input type="submit">
+                    <textarea class="commentbox" name="comment"></textarea>
+                    <input class="submitcomment" type="submit">
                   </form>
                 </div>
               </div>
@@ -196,7 +202,7 @@
             <div class="comment__info">
               <a href="#" class="action action--like">Like</a>
               <a href="#" class="action action--like">Unlike</a>
-              <a href="#">Reply</a>
+              <a class="reply_count" href="#">Reply</a>
               <span class=like_count >2 likes</span>
               Yesterday at 10:00am
             </div>
@@ -207,8 +213,8 @@
 
                 <div class="media__info">
                   <form action="#" method="post">
-                    <textarea name="comment"></textarea>
-                    <input type="submit">
+                    <textarea class="commentbox" name="comment"></textarea>
+                    <input class="submitcomment" type="submit">
                   </form>
                 </div>
               </div>
@@ -226,7 +232,7 @@
             <div class="comment__info">
               <a href="#" class="action action--like">Like</a>
               <a href="#" class="action action--like">Unlike</a>
-              <a href="#">3 replies</a>
+              <a class="reply_count" href="#">3 replies</a>
               <span class=like_count >2 likes</span>
               Yesterday at 10:00am
             </div>
@@ -242,7 +248,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">Reply</a>
+                    <a class="reply_count" href="#">Reply</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -259,7 +265,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">3 replies</a>
+                    <a class="reply_count" href="#">3 replies</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -275,7 +281,7 @@
                         <div class="comment__info">
                           <a href="#" class="action action--like">Like</a>
                           <a href="#" class="action action--like">Unlike</a>
-                          <a href="#">Reply</a>
+                          <a class="reply_count" href="#">Reply</a>
                           <span class=like_count >2 likes</span>
                           Yesterday at 10:00am
                         </div>
@@ -292,7 +298,7 @@
                         <div class="comment__info">
                           <a href="#" class="action action--like">Like</a>
                           <a href="#" class="action action--like">Unlike</a>
-                          <a href="#">Reply</a>
+                          <a class="reply_count" href="#">Reply</a>
                           <span class=like_count >2 likes</span>
                           Yesterday at 10:00am
                         </div>
@@ -309,7 +315,7 @@
                         <div class="comment__info">
                           <a href="#" class="action action--like">Like</a>
                           <a href="#" class="action action--like">Unlike</a>
-                          <a href="#">Reply</a>
+                          <a class="reply_count" href="#">Reply</a>
                           <span class=like_count >2 likes</span>
                           Yesterday at 10:00am
                         </div>
@@ -321,8 +327,8 @@
 
                       <div class="media__info">
                         <form action="#" method="post">
-                          <textarea name="comment"></textarea>
-                          <input type="submit">
+                          <textarea class="commentbox" name="comment"></textarea>
+                          <input class="submitcomment" type="submit">
                         </form>
                       </div>
                     </div>
@@ -340,7 +346,7 @@
                   <div class="comment__info">
                     <a href="#" class="action action--like">Like</a>
                     <a href="#" class="action action--like">Unlike</a>
-                    <a href="#">Reply</a>
+                    <a class="reply_count" href="#">Reply</a>
                     <span class=like_count >2 likes</span>
                     Yesterday at 10:00am
                   </div>
@@ -352,8 +358,8 @@
 
                 <div class="media__info">
                   <form action="#" method="post">
-                    <textarea name="comment"></textarea>
-                    <input type="submit">
+                    <textarea class="commentbox" name="comment"></textarea>
+                    <input class="submitcomment" type="submit">
                   </form>
                 </div>
               </div>
@@ -367,8 +373,8 @@
 
         <div class="media__info">
           <form action="#" method="post">
-            <textarea name="comment"></textarea>
-            <input type="submit">
+            <textarea class="commentbox" name="comment"></textarea>
+            <input class="submitcomment" type="submit">
           </form>
         </div>
       </div>

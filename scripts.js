@@ -28,11 +28,11 @@ window.addEventListener("load", function(){
 		if (this.nextElementSibling.style.display == "none"){
 			this.nextElementSibling.style.display = "inline";
 			this.style.display = "none";
-			num = -1
+			num = 1
 		}	else {
 			this.previousElementSibling.style.display = "inline";
 			this.style.display = "none";
-			num = 1
+			num = -1
 		}
 
 		if (numLikesPostStr(this) != undefined ){
