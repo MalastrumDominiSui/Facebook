@@ -40,5 +40,6 @@ window.addEventListener("load", function(){
 		} else {
 			numLikesCommentStr(this).innerText = addXlikestoString(numLikesCommentStr(this).innerText, num);
 		}
+		event.preventDefault();
 	}
 });
