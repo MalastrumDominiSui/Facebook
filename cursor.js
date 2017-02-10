@@ -4,7 +4,8 @@ window.addEventListener("load", function(){
 	var commentTextAreas = document.getElementsByClassName("commentbox")
 	//function travels up and down DOM to find the textbox for the TOP POST
 	function focusX(){
-			this.parentElement.parentElement.nextElementSibling.childNodes[5].childNodes[3].firstElementChild.firstElementChild.focus();
+		this.parentElement.parentElement.nextElementSibling.childNodes[5].childNodes[3].firstElementChild.firstElementChild.focus();
+		event.preventDefault();
 	}
 
 	for (var i = 0; i < commentButtons.length; i++){
