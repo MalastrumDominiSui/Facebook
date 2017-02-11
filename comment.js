@@ -52,7 +52,7 @@ window.addEventListener("load", function(){
 	}
 
 
-	//function takes the even clicking on Submit Comment, adds 1 to the string number within comment # string
+	//function takes the event clicking on Submit Comment, adds 1 to the string number within comment # string
 	function addCommentNmbrToStr() {
 		newCommentNmber = parseInt(commentNumDOM.innerText.split(" ")[0]) + 1;
 		if (newCommentNmber == 1) {
