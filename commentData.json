@@ -1,0 +1,127 @@
+{ "name" : "John Jacob Jingles",
+  "text" : "Hello World!",
+  "likes" : 22,
+  "time" : "10:00am",
+  "post comments":[
+	{
+		"name": "Sparky",
+		"text": "Lorem DoopeeDoop",
+		"likes": 2,
+		"time": "10:23am",
+		"replies":[
+			{	"name": "Jandice",
+				"text": "Lorem Bippy Boop",
+				"likes": 2,
+				"time": "10:24am",
+				"replies":[]
+			},
+			
+			{
+				"name": "Golfo",
+				"text": "Lorem Chippy Whippy",
+				"likes": 2,
+				"time": "10:25am",
+				"replies":[]
+			},
+
+			{
+				"name": "Danby",
+				"text": "Lorem Blinky Koop",
+				"likes": 2,
+				"time": "10:26am",
+				"replies":[
+					{	"name": "Jandice",
+						"text": "Lorem Bippy Boop",
+						"likes": 2,
+						"time": "10:26am",
+						"replies":[]
+					},
+					
+					{	"name": "Golfo",
+						"text": "Lorem Chippy Whippy",
+						"likes": 2,
+						"time": "10:27am",
+						"replies":[]
+					}
+				]
+			},
+
+			{
+				"name": "Wingum",
+				"text": "Lorem Proctor Magnus",
+				"likes": 2,
+				"time": "10:28am",
+				"replies":[]
+				
+			}
+		]
+	},
+
+	{
+		"name": "Spoogey",
+		"text": "Lorem Carbonkle",
+		"likes": 2,
+		"time": "10:29am",
+		"replies":[]
+	},
+
+	{
+		"name": "Pippendel",
+		"text": "Lorem Chippums",
+		"likes": 2,
+		"time": "10:30am",
+		"replies":[
+			{
+				"name": "Firkenstil",
+				"text": "Lorem Plurple Durple",
+				"likes": 2,
+				"time": "10:31am",
+				"replies":[]
+			},
+
+			{
+				"name": "Ace",
+				"text": "Lorem Foxtrot Tango",
+				"likes": 2,
+				"time": "10:32am",
+				"replies":[
+					{	"name": "Nerevar",
+						"text": "Lorem et Laborem",
+						"likes": 2,
+						"time": "10:33am",
+						"replies":[]
+					},
+
+					{
+						"name": "Zelda",
+						"text": "Lorem Chicken",
+						"likes": 2,
+						"time": "10:34am",
+						"replies":[]
+					},
+
+					{
+						"name": "Gandalf",
+						"text": "Lorem Non Est Passum",
+						"likes": 2,
+						"time": "10:35am",
+						"replies":[]
+					}
+
+				]
+			},
+
+			{
+				"name": "Balrog",
+				"text": "Lorem RaaaARRRGGHH",
+				"likes": 2,
+				"time": "10:36am",
+				"replies":[]
+			}
+		]
+	}
+	
+
+]
+	
+}
