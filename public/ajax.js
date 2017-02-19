@@ -9,34 +9,49 @@ window.addEventListener("load",function(){
 	// function to do the stuff with Facebook data.  The meat.
 	dataRequest.onload = function(){
 		var faceData = JSON.parse(dataRequest.responseText);
-		var thisCommentHTML = aCommentHTML(faceData);
+		var thisCommentHTML = replyArrToHTML(faceData["replies"]);
 		postCommentDivs[0].innerHTML = thisCommentHTML;
 	};
 	dataRequest.send();
 
-	// TODO fix strings so underline isn't solid through
 	//	function to build a single comment using JSON data
-	function aCommentHTML(data){
-		replyNum = data["post comments"].length;
-		var aComment = "<div class=\"comment media\">" +
-	        "<img src=" + data["imgSrc"]+ " class=\"profilePhoto\">" +
+	function aCommentHTML(commentObject){
+		replyNum = commentObject["replies"].length;
+		// repliesHTML = replyArrToHTML(commentObject["replies"]);
+		imagePath = commentObject["imgSrc"]; 
+		name = commentObject["name"];
+		text = commentObject["text"];
+		replyNum = xReplies(replyNum);
+		replyLike = xLikes("likes");
 
+		var aCommentHTMLStr = "<div class=\"comment media\">" +
+	        "<img src=" + imagePath + " class=\"profilePhoto\">" +
 	        "<div class=\"media__info\">" +
-	          "<a href=\"#\" class=\"name\"> " + data["name"] + " </a>"+
-	          data["text"]+
+	          "<a href=\"#\" class=\"name\"> " + name + " </a>"+
+	          text +
 	          "<div class=\"comment__info\">"+
 	            "<a href=\"#\" class=\"action action--like\">Like</a>"+" " +
 	            "<a href=\"#\" class=\"action action--like\">Unlike</a>"+" " +
-	            "<a class=\"reply_count\" href=\"#\">"+xReplies(replyNum)+"</a>"+" " +
-	            "<span class=like_count >"+xLikes("likes")+"</span>"+ " " +
+	            "<a class=\"reply_count\" href=\"#\">"+replyNum+"</a>"+" " +
+	            "<span class=like_count >"+replyLike+"</span>"+ " " +
 	            "Yesterday at 10:00am"+
 	          "</div>"+
-	          "<div class=\"replies\" style=\"display: none\">" +
+	          "<div class=\"replies\" style=\"display: block\">" + //repliesHTML +
 	          "</div>" +
 	        "</div>"+
 	      "</div>"
-	      return aComment;
+	      return aCommentHTMLStr;
 	}
+
+	function replyArrToHTML(arrOfReplies){
+		commentArrHTML = "";
+		len = arrOfReplies.length;
+		for (var i=0; i<len; i++) {
+			commentArrHTML = commentArrHTML + aCommentHTML(arrOfReplies[i]);
+		}
+		return commentArrHTML;
+	}
+
 });
 
 // generic function to give 1 Like, 1 Reply, 2 Replies, 3 Likes, or Like, Reply
@@ -51,24 +66,13 @@ function xLikeReply(num,strSingle,strPlural){
 		return strSingle;
 	}
 }
-
+//specific for likes
 function xLikes(num){
 	return xLikeReply(num,"Like","Likes");
 }
-
+//specific for replies
 function xReplies(num){
 	return xLikeReply(num,"Reply","Replies");
 }
 
-// some pseudo code
-
-// function plugValueComment(jsonArr)  //will be a sub array of objects in json
-// 		for jsonArr, and i < jsonArr.length,
-//			insert html for name, text,likes,time
-//			find replies. length
-//			if replies. length > 0 plugValueComment(jsonArr[replies])  //this is recursive here
-//			end
-//			i ++
-// 		end
-// end
 
