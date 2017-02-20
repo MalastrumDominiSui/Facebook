@@ -17,7 +17,7 @@ window.addEventListener("load",function(){
 	//	function to build a single comment using JSON data
 	function aCommentHTML(commentObject){
 		replyNum = commentObject["replies"].length;
-		// repliesHTML = replyArrToHTML(commentObject["replies"]);
+		repliesHTML = replyArrToHTML(commentObject["replies"]);
 		imagePath = commentObject["imgSrc"]; 
 		name = commentObject["name"];
 		text = commentObject["text"];
@@ -36,7 +36,7 @@ window.addEventListener("load",function(){
 	            "<span class=like_count >"+replyLike+"</span>"+ " " +
 	            "Yesterday at 10:00am"+
 	          "</div>"+
-	          "<div class=\"replies\" style=\"display: block\">" + //repliesHTML +
+	          "<div class=\"replies\" style=\"display: block\">" + repliesHTML +
 	          "</div>" +
 	        "</div>"+
 	      "</div>"
@@ -45,10 +45,13 @@ window.addEventListener("load",function(){
 
 	function replyArrToHTML(arrOfReplies){
 		commentArrHTML = "";
-		len = arrOfReplies.length;
-		for (var i=0; i<len; i++) {
-			commentArrHTML = commentArrHTML + aCommentHTML(arrOfReplies[i]);
-		}
+		arrOfReplies.forEach(function(i){
+			commentArrHTML = commentArrHTML + aCommentHTML(i);
+		});
+		// len = arrOfReplies.length;
+		// for (var i=0; i<len; i++) {
+		// 	commentArrHTML = commentArrHTML + aCommentHTML(arrOfReplies[i]);
+		// }
 		return commentArrHTML;
 	}
 
